@@ -1,0 +1,128 @@
+#VRML V2.0 utf8
+
+Transform {
+	children[
+Transform {
+				translation	0 -1 7
+				children Shape	{
+					appearance Appearance {texture ImageTexture {url "metal.jpg"}}
+					geometry Box {size 15 1 38}
+				}
+		}
+		Transform {
+				translation	0 10 0
+				children Shape {
+					appearance Appearance {texture ImageTexture {url "blue_metal.jpg"}}
+					geometry Cylinder {radius 3 height 17}
+				}
+
+		}
+
+
+
+
+
+		#motoare racheta
+		DEF Motor Transform	{ 
+		translation	-3 3.3 -3
+		children [
+			Shape {appearance DEF Wht_metal Appearance {texture ImageTexture {url "metal2.jpg"}}
+				geometry Cylinder {radius 1.5 height 5}
+			}
+			Transform{
+			   translation 0 2.5 0
+			   children Shape {
+				appearance USE Wht_metal
+				geometry Sphere	{radius 1.5}
+			   }
+		   }
+		   Transform{
+		   translation 0 -2 0
+		   children	Shape {
+			   appearance Appearance {texture ImageTexture {url "metal1.jpg"}}
+			   geometry	Cone {bottomRadius 3 height 2}
+		   }
+		   }	
+		]
+		}
+		Transform {
+		   rotation	0 1 0 3.14
+		   children	USE	Motor
+		}
+		Transform {
+		   rotation	0 1 0 1.57
+		   children	USE	Motor
+		}
+		Transform {
+		   rotation	0 1 0 -1.57
+		   children	USE	Motor
+		}
+
+
+		
+		#varf racheta
+		Transform {
+		translation	0 18.5 0
+		scale 1 0.5 1
+		children [Shape {
+		appearance USE Wht_metal
+		geometry Sphere {radius 3}
+	}
+	Transform {
+	translation	0 4 0
+	scale 1 1 1
+	children Shape {appearance Appearance {material Material {diffuseColor 1 1 1}}
+		geometry Box {size 0.2 5 0.2}}
+	}
+	]
+		}
+	    
+		#usa racheta
+		Transform {
+		translation	0 15 0.9
+		children 
+		Anchor 
+		{
+		description	"Spre luna"
+		url	"Luna.wrl"
+		children Shape{
+			appearance Appearance{material Material {diffuseColor 1 1 1}}
+		  geometry Cylinder{height 2 radius 2.4}
+		}
+	}
+		}
+	
+		
+		
+		
+		Transform {
+		translation	0 7 8
+		rotation 1 0 0 1
+		children [
+			 Shape {
+			appearance Appearance {material Material {diffuseColor 0 0 0 transparency 0.5}}
+			geometry Box {size 4 0.2 17}
+
+		} 
+		Transform {
+			translation	1.7 0 0
+			children Shape{
+			appearance Appearance {material Material {diffuseColor 1 1 1}}
+			geometry Box {size 0.7 1 17.5}
+
+		}
+        }
+		Transform {
+			translation	-1.7 0 0
+			children Shape{
+			appearance Appearance {material Material {diffuseColor 1 1 1}}
+			geometry Box {size 0.7 1 17.5}
+
+		}
+    }		
+			
+		
+				]
+			}
+	]
+}

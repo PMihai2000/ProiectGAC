@@ -1,0 +1,274 @@
+#VRML V2.0 utf8
+
+Transform
+{
+translation	0 0 0
+children
+[
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 0.5 0.5 0.5}}
+	geometry Extrusion 
+	{
+			solid TRUE
+			crossSection [1 1.3,1 1.4,1.4 1.4,1.4 -1.4,-1.4 -1.4,-1.4 1.4,-1 1.4,-1 1.38,-1.38 1.38,-1.38 -1.38 ,1.38 -1.38 ,1.38 1.38,1 1.38,1 1.4]
+			endCap TRUE
+			beginCap TRUE
+			spine [0 0.2 0,0 4 0]
+	}
+
+}
+DEF usa_container Transform 
+{
+translation 0 2.1 1.4 #2 5.9 1.5
+children
+[ 
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+	geometry Box {size 2 3.8 0.1}
+}
+DEF Maner Transform 
+{
+translation	0 0 0
+rotation 0 0 1 0
+children
+[ 
+	Transform	
+	{
+	rotation 1 0 0 1.57
+	translation	0 0 0.25
+	children Shape
+	{
+	appearance Appearance {material Material {diffuseColor 0.8 0.8 0.8}}
+	geometry Cylinder {radius 0.7 height 0.5}
+	}
+	}
+	Transform	
+	{
+	rotation 1 0 0 1.57
+	translation	0 0 0.5
+	children Shape
+	{
+	appearance Appearance {material Material {diffuseColor 0.8 0.8 0.8}}
+	geometry Cylinder {radius 0.2 height 0.5}
+	}
+	}
+	Transform 
+	{
+	translation	0 0 0.3
+	rotation 0 0 0 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Cylinder {height 2.5 radius 0.1}
+	}
+	}
+	Transform 
+	{
+	translation	0 0 0.3
+	rotation 0 0 1 0.785
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Cylinder {height 2.5 radius 0.1}
+	}
+	}
+	Transform 
+	{
+	translation	0 0 0.3
+	rotation 0 0 1 1.57
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Cylinder {height 2.5 radius 0.1}
+	}
+	}
+	Transform 
+	{
+	translation	0 0 0.3
+	rotation 0 0 1 -0.785
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Cylinder {height 2.5 radius 0.1}
+	}
+	}
+]
+
+}
+DEF	buton_usa TouchSensor {}
+]
+
+}
+
+ Transform
+{
+translation	0 4 0
+children
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+	geometry Box {size 3 0.1 3}
+}
+}
+Transform
+{
+translation	0 0.2 0
+children
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+	geometry Box {size 3 0.1 3}
+}
+}
+ Transform
+{
+translation	0 3 0
+children
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 0.5 0.5 0.5}}
+	geometry Box {size 2.8 0.1 2.8}
+}
+}
+DEF	picioare_container Transform
+{
+translation	0 0 0
+children
+[
+	Transform 
+	{
+	translation	-1.2 -0.1 -1.2
+	children Shape
+	{
+		appearance	Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Box {size 0.3 0.5 0.3}
+	
+	}
+	
+	}
+	Transform 
+	{
+	translation	1.2 -0.1 -1.2
+	children Shape
+	{
+		appearance	Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Box {size 0.3 0.5 0.3}
+	
+	}
+	
+	}
+	Transform 
+	{
+	translation	-1.2 -0.1 1.2
+	children Shape
+	{
+		appearance	Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Box {size 0.3 0.5 0.3}
+	
+	}
+	
+	}
+	Transform 
+	{
+	translation	1.2 -0.1 1.2
+	children Shape
+	{
+		appearance	Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Box {size 0.3 0.5 0.3}
+	
+	}
+	
+	}
+
+
+]
+}
+]
+}
+
+
+DEF rot_incuietoare_usa OrientationInterpolator	
+{
+	key[0 1]
+	keyValue [0 0 1 0,0 0 1 3.14]
+}
+DEF rot_incuietoare_invers_usa OrientationInterpolator	
+{
+	key[0 1]
+	keyValue [0 0 1 0,0 0 1 -3.14]
+}
+
+
+DEF	t_pos_deschidere_usa TimeSensor	
+{
+cycleInterval 3
+loop FALSE
+}
+
+DEF	t_pos_inchideree_usa TimeSensor	
+{
+cycleInterval 3
+loop FALSE
+}
+
+
+DEF	pos_deschidere_usa PositionInterpolator
+{
+	key	[0 1]
+	keyValue [0 2.1 1.4,-2 2.1 1.4]
+}
+DEF	pos_inchideree_usa PositionInterpolator
+{
+	key	[0 1]
+	keyValue [-2 2.1 1.4,0 2.1 1.4]
+}
+
+
+
+DEF	D_I_usa Script
+{
+eventIn	SFTime Click_usa
+eventOut SFBool	Status
+field SFBool status_usa FALSE
+
+field SFNode tp_deschidere USE t_pos_deschidere_usa
+field SFNode tp_inchidere USE t_pos_inchideree_usa
+field SFNode Usa USE usa_container
+url	"javascript: function Click_usa(stare)
+{
+
+	if(status_usa==false&&Usa.translation[0]==0)
+{
+
+tp_deschidere.startTime=stare;
+
+tp_inchidere.startTime=0;
+status_usa=true;
+}
+else
+	if(status_usa==true&&Usa.translation[0]==-2)
+{
+tp_deschidere.startTime=0;
+
+tp_inchidere.startTime=stare;;
+status_usa=false;
+}
+{
+}
+}
+
+"
+
+}
+ROUTE t_pos_inchideree_usa.fraction_changed	TO rot_incuietoare_invers_usa.set_fraction
+ROUTE rot_incuietoare_invers_usa.value_changed	TO Maner.rotation
+ROUTE t_pos_deschidere_usa.fraction_changed	TO rot_incuietoare_usa.set_fraction
+ROUTE rot_incuietoare_usa.value_changed	TO Maner.rotation
+ROUTE buton_usa.touchTime TO D_I_usa.Click_usa
+ROUTE t_pos_deschidere_usa.fraction_changed	TO pos_deschidere_usa.set_fraction
+ROUTE t_pos_inchideree_usa.fraction_changed	TO pos_inchideree_usa.set_fraction
+ROUTE pos_deschidere_usa.value_changed TO usa_container.translation
+ROUTE pos_inchideree_usa.value_changed TO usa_container.translation
+

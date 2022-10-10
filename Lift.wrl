@@ -1,0 +1,165 @@
+#VRML V2.0 utf8
+DEF	Pos Viewpoint
+{
+position 0 41.7 -9.25
+}
+DEF	Lift Transform 
+{
+translation	0 41.7 -9.25
+children 
+[
+	Transform{
+	translation	0 0.1 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.2 0.2 0.2}}
+		geometry Box{size 5 0.2 5}
+	}
+}
+	Transform 
+	{
+		translation	0 0 0
+		children Shape
+		{
+			appearance Appearance {texture ImageTexture {url "D:\VRML PROJECTS\Proiect/metal.jpg"}}
+			geometry Extrusion {
+			solid TRUE
+			crossSection [2 2.4,2 2.5,2.5 2.5,2.5 -2.5,-2.5 -2.5,-2.5 2.5,-2 2.5,-2 2.48,-2.48 2.48,-2.48 -2.48 ,2.48 -2.48 ,2.48 2.48,2 2.48,2 2.5]
+			endCap TRUE
+			beginCap TRUE
+			spine [0 0.2 0,0 4.8 0]
+	}
+		
+		}
+	}
+	Transform{
+	translation	0 4.9 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.2 0.2 0.2}}
+		geometry Box{size 5 0.2 5}
+	}
+}
+
+DEF	Aprop_senzor ProximitySensor
+{
+ center	0 2.5 0
+size 5 5 5
+}
+
+DEF	Buton_lift Transform 
+{
+translation	0 2.5 -2.4
+children 
+[
+	Shape
+	{
+		appearance Appearance {material Material {
+			diffuseColor .604 .631 .8
+			
+		}}
+		geometry Box {size 0.5 0.8 0.1}
+	}
+	Transform
+	{
+		translation	0 0.2 0.05
+	children 
+[
+	DEF	Buton_L TouchSensor	{}
+	
+	Shape
+	{
+	  appearance Appearance {material Material {
+			diffuseColor 1 0 0
+		
+		}}
+		geometry Box {size 0.2 0.2 0.1}
+	}
+]
+	}
+
+
+]
+}
+]
+}
+
+
+
+
+DEF	Urcare_lift PositionInterpolator
+{
+	key[0 1]
+	keyValue [0 1 -9.25,0 41.7 -9.25]
+}
+DEF	Coborare_lift PositionInterpolator
+{
+	key[0 1]
+	keyValue [0 41.7 -9.25,0 1 -9.25]
+}
+
+
+DEF	Viteza_u_lift TimeSensor
+{
+cycleInterval 20
+startTime 0
+loop FALSE
+}
+
+DEF	Viteza_c_lift TimeSensor
+{
+cycleInterval 20
+startTime 0
+loop FALSE
+}
+
+DEF	Pornire_lift Script
+{
+	eventIn	SFTime Urcare
+	eventIn	SFTime Coborare
+	eventIn	SFBool Inauntru
+	eventOut SFBool	StareLift
+	field SFNode T_u USE Viteza_u_lift
+	field SFNode T_c USE Viteza_c_lift
+	field SFNode L USE Lift
+	field SFNode Pos USE Pos
+	field SFBool T_stare TRUE
+	directOutput TRUE
+	url	"javascript:
+	function Urcare(active)
+	{
+		if(T_stare==false&&L.translation[1]==1&&Inauntru==TRUE)
+		{
+			 
+			T_u.startTime=active;
+			T_c.startTime=0;
+			T_stare=TRUE;
+			
+
+		}
+		}
+	
+	function Coborare(active)
+	{
+		if(T_stare==true&&L.translation[1]==41,7&&Inauntru==TRUE)
+		{
+			;
+			T_u.startTime=0;
+			T_c.startTime=active;
+			T_stare=FALSE;
+		
+		}
+	}	
+	
+	"
+}
+
+
+ROUTE Aprop_senzor.isActive	TO Pornire_lift.Inauntru
+ROUTE Buton_L.touchTime TO Pornire_lift.Urcare
+ROUTE Buton_L.touchTime TO Pornire_lift.Coborare
+ROUTE Viteza_u_lift.fraction_changed TO Urcare_lift.set_fraction
+ROUTE Viteza_c_lift.fraction_changed TO Coborare_lift.set_fraction
+ROUTE Urcare_lift.value_changed TO Lift.translation
+ROUTE Coborare_lift.value_changed TO Lift.translation
+

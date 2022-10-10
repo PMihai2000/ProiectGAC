@@ -1,0 +1,269 @@
+#VRML V2.0 utf8
+#
+Transform
+{
+translation	0 0 0
+children
+[
+	DEF	Birou Transform
+	{
+	translation	0 1 0
+	children
+	[
+		Transform #Top
+		{
+		translation	0 0 0
+		children Shape
+		{
+			appearance DEF A1 Appearance {texture PixelTexture {image 1 2 3 0x3a1000 0x6f6000}}
+			geometry Box {size 2 0.01 1}
+		}
+		}
+		Transform #L
+		{
+		translation	-0.85 -0.5 0
+		children Shape
+		{
+			appearance USE A1
+			geometry Box{size 0.01 1 1}
+		}
+		}
+		Transform	#R
+		{
+		translation	0.85 -0.5 0
+		children Shape
+		{
+			appearance USE A1
+			geometry Box{size 0.01 1 1}
+		}
+		}
+		#Spatiu tower----------
+		Transform
+		{
+		translation	0.55 -0.5 0
+		children Shape
+		{
+			appearance USE A1
+			geometry Box{size 0.01 1 1}
+		}
+		}
+		Transform
+		{
+		translation	0.70 -0.8 0
+		children Shape
+		{
+			appearance USE A1
+			geometry Box{size 0.30 0.01 1}
+		}
+		}
+		#------------------------------
+		Transform #Spate
+		{
+		translation	0 -0.4 -0.5
+		children Shape
+		{
+			appearance USE A1
+			geometry Box{size 1.7 0.8 0.01}
+		}
+		}
+	]
+}
+ DEF PC_KIT	Transform
+ {
+	translation	0 0 0
+	children
+	[
+	DEF TOWER Transform #Tower
+	{
+	translation	0.7 0.57 0.1
+	scale 0.9 1 1
+	children
+	[
+	Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Box {size 0.3 0.7 0.8}
+	}
+	Transform 
+	{
+	translation	0.07 -0.2 0.4
+	children
+	[
+		DEF	Tower_buton_s TouchSensor	{}
+		DEF	Tower_buton Shape 
+		{
+			appearance Appearance {material Material {diffuseColor 1 0 0}}
+			geometry Sphere	{radius 0.03}
+		}
+	]
+	}
+	Transform 
+	{
+	translation	0 0.25 0.38
+	children
+	Shape 
+	{
+		appearance Appearance {material Material {diffuseColor 0.5 0.5 0.5}}
+		geometry Box{size 0.24 0.1 0.1}
+	}
+	}
+	]
+	}
+	DEF MOUSE_PAD Transform #mouse pad
+	{
+	translation	0.6 1.01 0.04
+	children Shape{appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Box {size 0.3 0.01 0.5}
+	}
+	}
+	DEF MOUSE Transform #mouse
+	{
+	translation	0.6 1.02 0.05
+	rotation 0 1 0 0.04
+	children 
+	[
+	Shape{appearance Appearance {material Material {diffuseColor 1 1 1}}
+		geometry Box {size 0.05 0.015 0.075}
+	}									  
+	Transform 
+	{
+	translation	-0.015 0.01 -0.024
+	children Shape 
+	{
+		geometry Box {size 0.02 0.01 0.02}
+		appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+	}
+	}
+	Transform 
+	{
+	translation	0.015 0.01 -0.024
+	children Shape 
+	{
+		geometry Box {size 0.02 0.01 0.02}
+		appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+	}
+	}
+	Transform 
+	{
+	translation	0 0 -0.01
+	children
+	Shape 
+	{
+		geometry IndexedLineSet	
+		{
+			coord Coordinate {point [0 0 0,0 0 -0.5247]}
+			coordIndex [0 1]
+		}
+
+	}
+	}
+	]
+	}
+	DEF MONITOR Transform#monitor
+	{
+	 translation 0 1.05 -0.15
+	 children
+	 [
+		 Transform#suport 
+		 {
+		 translation 0 0 0
+		 children 
+			[
+			 Shape
+		 {
+			 appearance DEF	A2 Appearance {material Material {
+				 diffuseColor .6 .6 .6
+				 specularColor .5 .5 .5
+				 emissiveColor .15 .15 .15
+				 ambientIntensity 0
+			 }}
+			 geometry Box {size 0.3 0.01 0.3}
+		 }
+		 Transform 
+		 {
+		 translation 0 0.15 0
+		 children Shape
+		 {
+		 appearance USE	A2
+		 geometry Box {size 0.2 0.3 0.1}
+		 }
+		 }
+		]
+		 }
+		 Transform#ecran 
+		 {
+			 translation 0 0.3 0.07
+			 children
+			 [
+				 Shape 
+				 {
+				 appearance	USE	A2
+				 geometry Box{size 0.7 0.4 0.02}
+				 }
+				 Transform
+				 {
+				 translation 0 0 0.01
+				 children 
+				 DEF Ecran_S Switch{
+				  whichChoice 0
+				  choice [
+				 Shape
+				 {
+				 appearance	Appearance {texture PixelTexture {image 1 2 3 0x0f0f0f 0xffffff}}
+				 geometry Box {size 0.69 0.39 0.01}
+			 }
+				
+			 Shape
+			 {
+			 appearance	Appearance {texture PixelTexture {image 1 2 3 0x0f0f0f 0x0000ff}}
+			geometry Box {size 0.69 0.39 0.01}
+			 }
+						]
+			 } 
+			 }
+			 ]
+		 }
+		 DEF S1 Script
+		 {
+		 eventIn SFBool	ButonStatus
+		 eventOut SFBool Status
+		 field SFNode E USE	Ecran_S
+		 field SFNode B USE	Tower_buton
+		 field SFBool ON FALSE
+		 directOutput TRUE
+		 ROUTE Tower_buton_s.isActive TO S1.ButonStatus
+		 url "javascript: function ButonStatus(stare)
+		 {
+		 if(stare)
+		 if(ON==false)
+		 {
+		   E.whichChoice=1;
+		   B.appearance.material.diffuseColor[0]=0;
+		   B.appearance.material.diffuseColor[1]=1;
+		   ON=true;
+		 }
+		 else
+		{
+		   E.whichChoice=0;
+		   B.appearance.material.diffuseColor[0]=1;
+		   B.appearance.material.diffuseColor[1]=0;
+		   ON=false;
+		 }
+		 
+
+		 }"
+
+		 }
+	 ]
+	}
+	]
+ }
+
+]
+}
+
+Transform
+{
+translation	0 -0.26 1
+children Inline	{url "scaun.wrl"}
+}

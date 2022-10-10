@@ -1,0 +1,43 @@
+#VRML V2.0 utf8
+
+Transform
+{
+translation	0 0 0
+children
+[
+	Shape 
+	{
+		appearance DEF A1 Appearance {texture ImageTexture {url "t_canapea.jpg"}}
+		geometry Box {size 4 1 2}
+	}
+	Transform 
+	{
+	translation	-2.5 0.25 0
+	children Shape 
+	{
+		appearance USE A1
+		geometry Box {size 1 1.5 2}
+	}
+	}
+		Transform 
+	{
+	translation	2.5 0.25 0
+	children Shape 
+	{
+		appearance USE A1
+		geometry Box {size 1 1.5 2}
+	}
+	}
+		Transform 
+	{
+	translation	0 0.5 -1.25
+	children Shape 
+	{
+		appearance USE A1
+		geometry Box {size 6 2 0.5}
+	}
+	}
+
+]
+
+}

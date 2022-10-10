@@ -1,0 +1,1916 @@
+#VRML V2.0 utf8
+
+DEF VP1 Viewpoint {
+position -5 5 -10	 #0 20 0
+orientation 0 1 0 3.14
+}
+
+
+#structura_cladire------------------------------------------------
+DEF Parter Transform#parter 
+{
+translation 0 1 0
+
+children
+[ Shape 
+	{
+	appearance Appearance {material	Material
+		{
+			  diffuseColor 1 1 1
+			  
+	} }
+	geometry DEF Pereti Extrusion {
+	solid TRUE
+	crossSection [1.5 11.8,1.5 12,12 12,12 -12,-12 -12,-12 12,-1.5 12,-1.5 11.8,-11.8 11.8,-11.8 -11.8,11.8 -11.8,11.8 11.8,1.5 11.8]
+	endCap TRUE
+	beginCap TRUE
+	spine [0 0 0,0 8 0]
+	}
+	} 
+	Transform
+	{
+	translation	0  6.5 11.9
+	children Shape
+	{
+	  appearance Appearance {material Material
+		{
+			  diffuseColor 1 1 1 
+			 
+	} }
+	geometry Box{size 3 3 0.2}
+     }
+	}
+]
+}
+
+DEF	Sticla_ext Transform#pereti ce vor fi folositi si pentru alte etaje 
+{
+translation	0 9 0
+children
+Shape 
+	{
+	appearance Appearance {material	Material
+		{
+			  diffuseColor 1 0 0
+			  transparency 0.7
+	} }
+	geometry DEF Camera_pereti Extrusion {
+	solid TRUE
+	crossSection [12 12,12 -12,-12 -12,-12 12,12 12,11.8 11.8,-11.8 11.8,-11.8 -11.8,11.8 -11.8,11.8 11.8]
+	endCap TRUE
+	beginCap TRUE
+	spine [0 0 0,0 8 0]
+	}
+	}
+
+}
+
+
+DEF	Buton_Rampa1 Transform 
+{
+translation	0 11 -1.8
+rotation 0 1 0 3.14
+children 
+[
+	Shape
+	{
+		appearance Appearance {material Material {
+			diffuseColor .604 .631 .8
+			
+		}}
+		geometry Box {size 0.5 0.8 0.1}
+	}
+	Transform
+	{
+		translation	0 0.2 0.05
+	children 
+[
+	DEF	Buton_1 TouchSensor	{}
+	
+	Shape
+	{
+	  appearance Appearance {material Material {
+			diffuseColor 1 0 0
+		
+		}}
+		geometry Box {size 0.2 0.2 0.1}
+	}
+]
+	}
+
+
+]
+}
+
+DEF	Buton_Rampa2 Transform 
+{
+translation	1.5 18.5 -10.1
+rotation 0 1 0 -1.57
+children 
+[
+	Shape
+	{
+		appearance Appearance {material Material {
+			diffuseColor .604 .631 .8
+			
+		}}
+		geometry Box {size 0.5 0.8 0.1}
+	}
+	Transform
+	{
+		translation	0 0.2 0.05
+	children 
+[
+	DEF	Buton_3 TouchSensor	{}
+	
+	Shape
+	{
+	  appearance Appearance {material Material {
+			diffuseColor 1 0 0
+		
+		}}
+		geometry Box {size 0.2 0.2 0.1}
+	}
+]
+	}
+
+
+]
+}
+
+DEF	Buton_usa Transform  #buton usa exterioara
+{
+translation	4 2.5 11.8
+rotation 0 1 0 3.14
+children 
+[
+	Shape
+	{
+		appearance Appearance {material Material {
+			diffuseColor .304 .631 .8
+			
+		}}
+		geometry Box {size 0.5 0.8 0.1}
+	}
+	Transform
+	{
+		translation	0 0.2 0.05
+	children 
+[
+	DEF	Buton_2 TouchSensor	{}
+	
+	Shape
+	{
+	  appearance Appearance {material Material {
+			diffuseColor 0 0 0
+		
+		}}
+		geometry Box {size 0.2 0.2 0.1}
+	}
+]
+	}
+
+
+]
+}
+
+DEF RAMPA1 Transform #Rampa 1
+{
+translation	0 0 -3
+children Shape
+{
+	appearance Appearance {texture ImageTexture {url "D:\VRML PROJECTS\Proiect/metal.jpg"}}
+	geometry DEF Rampa1 IndexedFaceSet
+	{
+
+		coord Coordinate {point [-11.8 0 -4.5, #0
+			11.8 0 -4.5,#1
+			11.8 0 -8.5,#2
+			-11.8 0 -8.5, #3
+			-11.8 10 -4.5,	#4
+			11.8 10 -4.5,	#5
+			11.8 10 -8.5,	#6
+			-11.8 10 -8.5	#7
+		]	}
+		coordIndex [1 5 4 0 -1
+					0 1 2 3 -1
+					1 2 6 5 -1
+					2 3 7 6 -1
+					3 0 4 7 -1
+					4 5 6 7]
+				solid TRUE
+	}
+
+}
+
+}
+DEF RAMPA2 Transform #Rampa 2
+{
+translation	0 9.5 16
+scale 1 0.85 1
+children Shape
+{
+	appearance Appearance {material Material {diffuseColor 0.2 0.2 0.2}}
+	geometry DEF Rampa2 IndexedFaceSet
+	{
+
+		coord Coordinate {point [-11.8 0 -4.5, #0
+			11.8 0 -4.5,#1
+			11.8 0 -8.5,#2
+			-11.8 0 -8.5, #3
+			-11.8 10 -4.5,	#4
+			11.8 10 -4.5,	#5
+			11.8 10 -8.5,	#6
+			-11.8 10 -8.5	#7
+		]	}
+		coordIndex [1 5 4 0 -1
+					0 1 2 3 -1
+					1 2 6 5 -1
+					2 3 7 6 -1
+					3 0 4 7 -1
+					4 5 6 7]
+				solid TRUE
+	}
+
+}
+
+}
+
+
+ #--------------------------------------------------------
+
+#Etaje ----------------------------------------------------------------------------------
+DEF DELIM_ETAJE_RAMPA Transform {
+	 children[
+		 Transform {#podea parter
+		 translation 0 0.5 0
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 25 1 25}
+			 }
+		 }
+		 
+		 DEF Podea_et_sup Transform	
+		 {
+		  translation 0 0 0
+		  children
+		  [
+		 
+		Transform {
+		 translation 0 9.5 2.5
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 25 1 20}
+			 }
+		 }
+
+
+		 Transform {
+		 translation 0 9.5 -12
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 25 1 1}
+			 }
+		 }
+		 Transform {
+		 translation -12.25 9.5 -10
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 0.5 1 5}
+			 }
+		 }
+		 Transform {
+		 translation 12.25 9.5 -10
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 0.5 1 5}
+			 }
+		 }
+	 ]
+
+	 }
+	 Transform
+	 {
+	 translation 0 59 0
+	 
+		 children
+		 [
+	 Shape
+	 {
+		 appearance	Appearance
+		 {
+			 material Material 
+			 {
+			 diffuseColor 0.85 0.5 0.14
+			 }
+		 }
+		 geometry USE Camera_pereti
+	 }
+	Transform
+	{
+	translation	0 8 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0.2 0.2 0.2}}
+		geometry Box {size 24 1 24}
+	}
+	}
+ ]
+
+	 }
+		 ]
+	 }
+#-----------------------------------------------------------------------------------------
+
+	 
+	 DEF DELIM_ETAJE_PODEA_LIFT Transform
+	 {
+	 translation 0 8 0
+	 rotation 0 1 0 3.14
+	 children 
+	 [
+	 USE Podea_et_sup
+	 Transform 
+	 {
+	 translation 0 1 0
+	 children USE Sticla_ext
+	 }
+	  DEF Acop_g Transform {
+		 children
+		 [
+		Transform { #Acoperis_gaura_lift
+		 translation 0 18.5 -8
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 25 1 11}
+			 }
+		 }
+		 Transform {
+		 translation 0 18.5 8
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 25 1 11}
+			 }
+		 }
+		 Transform {
+		 translation 8 18.5 0
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 11 1 25}
+			 }
+		 }
+		 Transform {
+		 translation -8 18.5 0
+		 children Shape	{
+			 appearance	Appearance {material Material {
+			 diffuseColor 0.2 0.2 0.2
+			 }}
+			 geometry Box {	size 11 1 25}
+			 }
+		 } 
+	 ]
+
+	 }
+		 Transform
+		 {
+		 translation 0 19 0
+		 children
+		 Shape
+		 {
+			 appearance Appearance {material Material {diffuseColor 0.5 0.5 0.5 transparency 0.4}}
+			 geometry Extrusion
+		 {
+			 spine [0 0 0,0 8 0,0 16 0 ,0 24 0, 0 31.5 0]
+			 crossSection [11 11,11 -11,-11 -11,-11 11,11 11,10.8 10.8,-10.8 10.8,-10.8 -10.8,10.8 -10.8,10.8 10.8]
+			 orientation [0 0 0 0,0 1 0 0.785,0 1 0 1.57, 0 1 0 2.355, 0 1 0 3.14]
+			 ccw TRUE
+			 solid FALSE
+			 convex	TRUE
+		 
+		 }
+		 }
+		 }
+		 Transform
+		 {
+		 translation 0 32 0
+		 children USE Acop_g
+		 }
+	 ]
+
+	 }
+#Lift---------------------------------
+	 DEF Lift Transform 
+	 {
+	   translation 0 12.3 9.25	#17
+	   children	Inline
+	   {
+	   url "Lift.wrl"
+	   }
+	 }
+#----------------------------------------	
+ 
+#usa cladire----------------------------------------------------------------------	 
+DEF usa Transform {
+	translation	0 2.5 10.6
+	scale 1.5 2.1 2
+	children [
+		Transform {
+			translation	0 0 0.5
+		children Shape {
+			appearance Appearance {material Material {diffuseColor 0.9 0.9 0.9}}
+		geometry Box{size 2 2.5 0.5}
+	}
+	}
+	Transform {
+		translation	-1.15 0.1 0.5
+		children Shape {
+			appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Box{size 0.3 2.6 0.5}
+	}
+	}
+	 Transform {
+		translation	1.15 0.1 0.5
+		children Shape {
+			appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Box{size 0.3 2.6 0.5}
+	}
+	}
+	 Transform {
+		translation	0 0.1 0.5
+		children Shape {
+			appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Box{size 0.2 2.6 0.6}
+	}
+	}
+	Transform {
+		translation	0 1.5 0.5
+		children Shape {
+			appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Box{size 5 0.5 0.5}
+	}
+	}
+	
+	]
+	
+}
+
+#------------------------------------------------------------------------------------------
+ 
+#Decoratiuni etaje-------------------------------------------------------
+DEF DEC_ET3 Transform#Decoratiuni etaj3 
+{
+   translation 0 60 0
+   children
+   [
+	   Transform #covor
+	   {
+		   translation -8 -1 6
+		   rotation	0 1 0 1.3
+			children Inline	{url "covor.wrl"}
+       }
+	   Transform #covor
+	   {
+	   translation 7 -1 -7
+	  scale 0.5 0.5 1
+	   rotation	0 1 0 0
+	   children	Inline {url "covor1.wrl"}
+	   }
+	   Transform #tablou1
+	   {
+		   translation 11 3 4
+		   rotation	0 1 0 1.57
+		   children Inline {url "tablou1.wrl"}
+	   }
+	   Transform #tablou2
+	   {
+		   translation -11 3 -3
+		   rotation	0 1 0 1.57
+		   scale 0.5 2 1
+		   children Inline {url "tablou3.wrl"}
+	   }
+	   Transform #tablou3
+	   {
+		   translation -11 2.8 2
+		   rotation	0 1 0 1.57
+		   scale 0.5 1 1
+		   children Inline {url "tablou2.wrl"}
+	   }
+	 DEF Cortine Transform 
+		{
+		translation	-6.5 0.5 -11
+		scale 1 1 1.2
+		children Inline
+		{
+		url "cortine.wrl"
+		}
+	}
+   ]
+}
+DEF DEC_ET2 Transform#Decoratiuni etaj2
+{
+  translation 0 18 0
+  rotation 0 1 0 0
+  children
+  [
+	  DEF Birouri Group{
+		  children [
+	  Transform	#birou1
+	  {
+		  translation 10 0 -10
+		  children Inline
+			{
+			url "Birou.wrl"
+			}
+	  }
+	  Transform	#birou2
+	  {
+		  translation 7 0 -10
+		  children Inline
+			{
+			url "Birou.wrl"
+			}
+	  }
+	  Transform	#birou3
+	  {
+		  translation 4 0 -10
+		  children Inline
+			{
+			url "Birou.wrl"
+			}
+	  }
+	  Transform	#birou4
+	  {
+		  translation 1 0 -10
+		  children Inline
+			{
+			url "Birou.wrl"
+			}
+	  }
+	  Transform	#birou5
+	  {
+		  translation -2 0 -10
+		  children Inline
+			{
+			url "Birou.wrl"
+			}
+	  }
+  ]
+}
+	DEF Pereti1_camere Transform
+	{
+	   children
+	   [
+		   Transform
+		   {
+			   children
+		   	[
+		   Transform 
+		   {
+		   translation 1.75 4 -5.25
+		   children	Shape
+		   {
+			   appearance DEF A2 Appearance {texture PixelTexture {repeatS	FALSE repeatT TRUE image 4 3 3 0x01ff01 0x01ff01 0x01ff01 0x01f001 0x01f001 0x01f001 0xffffff 0xffffff 0xffffff 0x0101ff 0x0101ff 0x0101ff }}
+			   geometry Box	{size 13 8 0.5}
+		   }
+		   }
+		   Transform 
+		   {
+		   translation -5 4 -8.5
+		   children	Shape
+		   {
+			   appearance USE A2
+			   geometry Box	{size 0.5 8 7}
+		   }
+		   }
+		   
+			]
+		
+		}
+
+
+	   ]
+
+	}
+	DEF Pereti2_camere Group
+	{
+	   children
+	   [
+		   Transform
+		   {
+			   translation -0.01 0 0.01
+			   children
+		   	[
+		   Transform 
+		   {
+		   translation 1.75 4 -5.25
+		   children	Shape
+		   {
+			   appearance DEF A1 Appearance	{material Material {diffuseColor 1 1 1}}
+			   geometry Box	{size 13 8 0.5}
+		   }
+		   }
+		   Transform 
+		   {
+		   translation -5 4 -8.5
+		   children	Shape
+		   {
+			   appearance USE A1
+			   geometry Box	{size 0.5 8 7}
+		   }
+		   }
+		   
+			]
+		
+		}
+
+
+	   ]
+
+	}
+	Transform 
+	{
+	translation	-8 0.05 0
+	children DEF masa Inline {url "masa.wrl"}
+	}
+	Transform 
+	{
+	translation	-8 -0.3 1.5
+	children DEF scaun Inline {url "scaun.wrl"}
+	}
+	Transform 
+	{
+	translation	-8 -0.3 -1.6
+	children USE scaun
+	}
+	Transform #covoare
+	{
+	translation	0 0 0
+	children
+	[
+		Transform 
+		{
+		translation	-8 0 0
+		scale 0.3 1 1
+		children Shape
+		{
+			appearance Appearance {material Material {diffuseColor 0 0.5 0}}
+			geometry Cylinder {height 0.01 radius 6}
+		}
+		}
+		Transform
+		{
+		translation	3.6 0 -9
+		children Shape
+		{
+			appearance Appearance {material Material {diffuseColor 0 0.5 0.5}}
+			geometry Box {size 15 0.01 4}
+		}
+	}
+	]
+	}
+	Transform 
+	{
+	translation	-8 0 -10
+	
+	}
+  ]
+}
+
+DEF	DEC_ET1 Transform#Decoratiuni etaj1
+{
+translation	0 10 0
+children
+[
+	Transform #miniatura glob
+	{
+		translation	0 0 0
+		children[
+ 
+	 DEF Glob_R OrientationInterpolator
+{
+	key [ 0, 0.33, 0.66, 1 ]
+    keyValue [ 0 1 1  0,  0 1 0  2.09,  0 1 0  4.19, 0 1 0  0 ]
+}
+
+DEF	Glob_T TimeSensor 
+{
+cycleInterval 200
+loop TRUE
+}
+ 	DEF	Pamant Transform 
+	{
+	translation	0 3 0
+	scale 1 1 1
+	children[ Shape
+	{
+		appearance Appearance {texture ImageTexture {url "Terra.jpg" repeatS TRUE }}
+		geometry Sphere	{radius 1.5}
+		ROUTE Glob_T.fraction_changed TO Glob_R.set_fraction
+		ROUTE Glob_R.value_changed TO Pamant.rotation
+	}
+
+]
+}
+DEF Ecran1 Transform 
+	{
+		rotation 0 0 1 -0.5
+		children Transform
+		{
+		translation	-11 0 -6
+		rotation 0 1 0 1.57
+		 children Inline {url "ecran.wrl"}
+	  }
+     }
+	 DEF Ecran2 Transform 
+	{
+		rotation 0 0 1 0.5
+		children Transform
+		{
+		translation	11 0 -6
+		rotation 0 1 0 -1.57
+		 children Inline {url "ecran.wrl"}
+	  }
+     }
+	 DEF Covor_et1 Transform 
+	 {
+	   translation 0 0 1
+	   children	
+	   [
+		   Shape {appearance Appearance {material Material {diffuseColor 0 0.8 0.6}}
+			   geometry	Box	{size 12 0.1 12}
+		   }
+	   ]
+	 
+	 }
+
+	Transform #sticla securizata
+	{
+	translation	0 4 0.7
+	children Shape
+	{
+		appearance Appearance {material Material {transparency 0.2}}
+		geometry Box {size 5 7.9 5}
+	}
+	}
+	DEF	F Fog {visibilityRange 0 color 1 0 0 fogType "EXPONENTIAL"}
+
+	Collision {
+	collide	FALSE
+	children DEF sticla_sec Transform {
+		children
+		[
+	DEF zid_s1 Transform#zid1 
+	{
+	 translation  7.25 4 0
+	 children Shape
+	{
+		appearance Appearance {material DEF zid_et1_material Material {transparency 0.2}}
+		geometry Box {size 9.5 7.9 0.2}
+	}
+	}
+	DEF zid_s2 Transform#zid2 
+	{
+	 translation  -7.25 4 0
+	 children Shape
+	{
+		appearance Appearance {material USE zid_et1_material }
+		geometry Box {size 9.5 7.9 0.2}
+	}
+	}
+	]
+	}
+}
+	
+DEF	panou1 Transform
+{
+translation	-9 2 7.5
+children 
+[
+	Shape
+	{
+		appearance Appearance {texture ImageTexture {url "c1.jpg"}}
+		geometry Box {size 2 2.5 0.01}
+	}
+	DEF	buton_panou1 TouchSensor {}
+]
+}
+DEF	panou2 Transform
+{
+translation	-6 2 7.5
+children 
+[
+	Shape
+	{
+		appearance Appearance {texture ImageTexture {url "c2.jpg"}}
+		geometry Box {size 2 2.5 0.01}
+	}
+	DEF	buton_panou2 TouchSensor {}
+]
+}
+DEF	panou3 Transform
+{
+translation	-3 2 7.5
+children 
+[
+	Shape
+	{
+		appearance Appearance {texture ImageTexture {url "c3.jpg"}}
+		geometry Box {size 2 2.5 0.01}
+	}
+	DEF	buton_panou3 TouchSensor {}
+]
+}
+]
+}
+]
+}
+DEF DEC_PARTER Transform
+{
+children
+[
+	Transform #zid
+	{
+	translation	-2.5 5 -7.5
+	children Shape
+	{
+		geometry Box {size 18 8 0.1}
+	}
+	}
+	
+	DEF	Covor_parter Transform
+	{
+	translation	0 1.01 1
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 1 0 0}}
+		geometry Box {size 4 0.1 20}
+	}
+	}
+	Transform 
+	{
+	translation	-10 1.3 -3
+	rotation 0 1 0 1.57
+	children  Inline {url "seif.wrl"}
+	}
+	Transform 
+	{
+	translation	-10 1.1 4
+	scale 1 0.5 1
+	rotation 0 1 0 1.57
+	children Inline {url "seif.wrl"}
+	}
+	Transform
+	{
+	translation	-11.5 6 5
+	scale 0.5 1.5 1
+	rotation 0 1 0 1.57
+	children Inline	{url "tablou4.wrl"}
+	}
+	Transform
+	{
+	translation	-11.5 5 8
+	scale 0.5 1 1
+	rotation 0 1 0 1.57
+	children Inline	{url "tablou5.wrl"}
+	}
+	Transform
+	{
+	translation	-11.5 7 0
+	scale 1 1 1
+	rotation 0 1 0 1.57
+	children Inline	{url "tablou7.wrl"}
+	}
+	Transform
+	{
+	translation	11.5 7 0
+	scale 1 1 1
+	rotation 0 1 0 1.57
+	children Inline	{url "tablou6.wrl"}
+	}
+	Transform
+	{
+	translation	11.5 6 8
+	scale 1 2 1
+	rotation 0 1 0 1.57
+	children Inline	{url "tablou9.wrl"}
+	}
+	Transform
+	{
+	translation	-2.5 5 -6.9
+	scale 1 1 1
+	rotation 0 1 0 0
+	children Inline	{url "tablou8.wrl"}
+	}
+	Transform
+	{
+	translation	8 1.5 3
+	rotation 0 1 0 -1.57
+	children Inline	{url "canapea.wrl"}
+	}
+	Transform
+	{
+	translation	8 0.9 7
+	scale 1 1.5 1
+	children Inline	{url "palmier.wrl"}
+	}
+	Transform 
+	{
+	translation	8 5 10
+	rotation 0 0 1 3.14
+	children Shape
+	{
+		appearance Appearance {texture ImageTexture {url "metal1.jpg"}}
+		geometry Cone {height 8 bottomRadius 1}
+	}
+	}
+]
+}
+#----------------------------------------------------------------------
+
+ #Antena-------------------------------------------------------------------------------
+
+DEF ANTENA Transform {
+translation	0 67 0
+children [
+	Transform {
+		 translation -4 10 0
+		children DEF Tija Shape {
+	appearance Appearance {material Material {diffuseColor 0.7 0.7 0.7}}
+	geometry Cylinder {height 20 radius 0.3}
+
+}
+}
+Transform {
+scale 1 0.5 1
+translation	-3 18 0
+rotation 0 0 1 1.57
+children USE Tija
+}
+Transform {
+scale 1 0.5 1
+translation	-6 17 0
+rotation 0 0 1 1.57
+children USE Tija
+}
+Transform {
+scale 1 0.5 1
+translation	-1 14 0
+rotation 0 0 1 1.57
+children USE Tija
+}
+]
+}
+#------------------------------------------------------------------------------------
+
+
+#Pancarde ajutatoare --------------------------------------------------------------
+DEF PANCARDE Collision {
+	collide	FALSE
+children 
+[
+	DEF Pancarda1 Billboard
+{
+axisOfRotation 0 1 0 
+bboxCenter 0 61 0
+children
+
+[
+DEF text1 Transform 
+{
+  translation 0 61 0
+  children 
+  [
+	  Shape
+	  {
+		  appearance Appearance	{material Material {diffuseColor 0 0 1}}
+		  geometry Text	
+		  {
+		  string "Bun venit!"
+		  fontStyle	FontStyle
+		  {
+		  size 0.5
+		  
+		  }
+		  }
+	  
+	  }
+	  DEF iesire_cortine ProximitySensor 
+	{
+		size 7 7 12
+	}
+  ]
+}
+
+DEF	text2 Transform	
+{
+translation	0 61 0
+scale 0 0 0
+children Shape 
+{
+	appearance Appearance	{material Material {diffuseColor 0 0 1}}
+	geometry Text	
+	{
+		string ["Gaseste cele 3 sigurante!","si plaseazale pe panoul","din fata"]
+		fontStyle	FontStyle
+		{
+		size 0.5
+		}
+		}
+	}
+}
+DEF	text3 Transform	
+{
+translation	0 61 0
+scale 0 0 0
+children Shape 
+{
+	appearance Appearance	{material Material {diffuseColor 0 0 1}}
+	geometry Text	
+	{
+		string ["Aranjeaza sigurantele in","ordinea corecta si apasa","butonul ascuns"]
+		fontStyle	FontStyle
+		{
+		size 0.5
+		}
+		}
+	}
+}
+]
+}
+
+DEF	Pancarda2 Transform
+{
+translation	0 20 -4.9
+children
+Shape
+{
+	appearance Appearance {texture ImageTexture {url "pancarda2.jpg"}}
+	geometry Box {size 2 1.5 0.01 }
+}
+}
+]
+}
+
+DEF	Pancarda3 Transform
+{
+translation	-11.5 13 4
+children
+[
+	Shape 
+	{
+		appearance Appearance {texture ImageTexture {url "pancarda3.jpg"}}
+		geometry Box{size 0.01 3 4}
+	}
+
+]
+}
+
+DEF	Pancarda4 Transform
+{
+translation	4 5 -6.9
+rotation 0 1 0 1.57
+children
+[
+	Shape 
+	{
+		appearance Appearance {texture ImageTexture {url "pancarda4.jpg"}}
+		geometry Box{size 0.01 3 4}
+	}
+
+]
+}
+
+
+
+
+#Puzzle 1--------------------------------------------
+#etaj3
+Group{
+	children [
+DEF	Panou_sig Transform
+{
+translation	0 62 11.7
+children
+[
+
+   Shape
+   {
+	   appearance Appearance {texture ImageTexture {url "metal1.jpg"}}
+	   geometry	Box{size 3 2 0.2}
+   }
+   DEF Slot1 Transform
+   {
+   translation -1 0 -0.2
+   children	
+   [
+	   Shape 
+	   {
+		   appearance Appearance {material Material {diffuseColor 0 0 0}}
+		   geometry	Box	{size 0.2 0.5 0.2}
+	   }
+	   DEF Slot1_s1 TouchSensor	{}
+   
+   ]
+   }
+   DEF Slot2 Transform
+   {
+   translation 0 0 -0.2
+   children	
+   [
+	   Shape 
+	   {
+		   appearance Appearance {material Material {diffuseColor 0 0 0}}
+		   geometry	Box	{size 0.2 0.5 0.2}
+	   }
+	   DEF Slot2_s2 TouchSensor	{}
+   
+   ]
+   }
+   DEF Slot3 Transform
+   {
+   translation 1 0 -0.2
+   children	
+   [
+	   Shape 
+	   {
+		   appearance Appearance {material Material {diffuseColor 0 0 0}}
+		   geometry	Box	{size 0.2 0.5 0.2}
+	   }
+	   DEF Slot3_s3 TouchSensor	{}
+   
+   ]
+   }
+]
+}
+
+DEF	Sig1 Transform
+{
+translation	10 60 10
+children 
+[
+	Transform 
+	{
+	translation	0 0.5 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Cylinder {radius 0.3 height 0.1}
+	}
+	}
+	Transform 
+	{
+	translation	0 -0.5 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Cylinder {radius 0.3 height 0.1}
+	}
+	}
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 0 0}}
+	geometry Cylinder 
+	{
+	height 1
+	radius 0.2
+	}
+
+}
+
+
+DEF	Sig1_buton TouchSensor {}
+]
+}
+
+
+DEF	Sig2 Transform
+{
+translation	-11.3 59.5 -10.5
+children 
+[
+	Transform 
+	{
+	translation	0 0.5 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Cylinder {radius 0.3 height 0.1}
+	}
+	}
+	Transform 
+	{
+	translation	0 -0.5 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Cylinder {radius 0.3 height 0.1}
+	}
+	}
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 0 0 0.7}}
+	geometry Cylinder 
+	{
+	height 1
+	radius 0.2
+	}
+
+}
+
+DEF	Sig2_buton TouchSensor {}
+]
+
+}
+
+DEF	Sig3 Transform
+{
+translation	-10 60 10
+children 
+[
+	Transform 
+	{
+	translation	0 0.5 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Cylinder {radius 0.3 height 0.1}
+	}
+	}
+	Transform 
+	{
+	translation	0 -0.5 0
+	children Shape
+	{
+		appearance Appearance {material Material {diffuseColor 0 0 0}}
+		geometry Cylinder {radius 0.3 height 0.1}
+	}
+	}
+Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 1 0}}
+	geometry Cylinder 
+	{
+	height 1
+	radius 0.2
+	}
+
+}
+
+
+DEF	Sig3_buton TouchSensor {}
+]
+}
+
+DEF Containere Transform
+{
+translation	0 59.15 0
+children
+[
+Transform#1
+{
+translation	10 0 10
+scale 0.6 0.6 0.6
+rotation 0 1 0 -1.57
+children DEF Dulap1 Inline
+{
+	url	"Dulap.wrl"
+}
+}
+ Transform#2
+{
+translation	10 0 7
+scale 0.6 0.8 0.6
+rotation 0 1 0 -1.57
+children DEF Dulap2 Inline
+{
+	url	"Dulap.wrl"
+}
+}
+Transform#3
+{
+translation	-10 0 10
+scale 0.6 1 0.6
+rotation 0 1 0 1.57
+children DEF Dulap3 Inline
+{
+	url	"Dulap.wrl"
+}
+
+}
+
+Transform
+{
+translation	7 0 -10
+scale 2 0.4 0.6
+rotation 0 1 0 0
+children DEF Dulap4 Inline
+{
+	url	"Dulap.wrl"
+}
+
+}
+]
+} 
+#cod_panou------------------
+Transform 
+{
+translation 7 59.15 -10
+children 
+[
+
+Transform
+{
+translation	0 0.4 0
+children Shape
+{
+	appearance Appearance {material Material {diffuseColor 0 0 1}}
+	geometry Sphere	{radius 0.2}
+}
+}
+ Transform
+{
+translation	-1.5 0.4 0.3
+children Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 1 0}}
+	geometry Cylinder {radius 0.2 height 0.5}
+}
+}
+Transform
+{
+translation	1 1.3 0
+children  Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 1 0}}
+	geometry Sphere	{radius 0.1}
+}
+}
+Transform
+{
+translation	1.3 1.3 0
+children  Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 1 0}}
+	geometry Box{size 0.2 0.1 0.1}
+}
+}
+Transform
+{
+translation	1 0.3 0
+children  Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 0 0}}
+	geometry Cone{bottomRadius 0.2 height 0.3}
+}
+}
+Transform
+{
+translation	-0.7 1.3 0
+children  Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 0 0}}
+	geometry Sphere	{radius 0.1}
+}
+}
+Transform
+{
+translation	-.4 0.3 0.1
+children  Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 0 0}}
+	geometry Sphere	{radius 0.1}
+}
+}
+Transform
+{
+translation	1 1.3 0
+children  Shape
+{
+	appearance Appearance {material Material {diffuseColor 1 0 0}}
+	geometry Box{size 0.2 0.2 0.2}
+}
+}
+
+
+
+
+]
+}
+ #--------------------
+DEF	activare_lift Transform
+{
+translation	-9 60 -10.5
+children 
+[
+	Transform 
+	{
+	translation	0 -0.5 0
+	children Shape 
+	{
+		appearance Appearance {texture ImageTexture {url "metal.jpg"}}
+		geometry Box{size 0.5 1 0.5}
+	}
+	}
+	Transform 
+	{
+	translation	0 0 0
+	children 
+	[
+		Shape
+	{
+		appearance Appearance {material Material {diffuseColor 1 0 0}}
+		geometry Cylinder {radius 0.2 height 0.2}
+	}
+	DEF	buton_ap_lift TouchSensor {}
+	]
+	}
+]
+}
+DEF	T_ap_lift TimeSensor {loop FALSE cycleInterval 10}
+DEF	P_ap_lift PositionInterpolator 
+{
+	key [0 1 ]
+	keyValue [0 12.3 9.25,0 17 9.25]
+}
+]
+}
+#-----------------------------------------------------------
+
+
+
+
+
+
+#SCRIPTURI,SENZORI SI RUTE
+
+
+#DEF	t1 TimeSensor {loop FALSE  cycleInterval 20}
+
+
+
+
+
+DEF	p1_text Script
+{
+	eventIn	SFBool i_c
+	eventOut SFBool	Status
+	directOutput TRUE
+	field SFNode PS USE	iesire_cortine
+	field SFInt32 Scena 0
+	field SFNode txt1 USE text1
+	field SFNode txt2 USE text2
+	ROUTE iesire_cortine.isActive TO p1_text.i_c
+
+	url	"javascript: function i_c(status)
+	{
+	if(status)
+	{
+	Scena=1;
+	txt1.scale[0]=txt1.scale[1]=txt1.scale[2]=0;
+	txt2.scale[0]=txt2.scale[1]=txt2.scale[2]=1;
+	PS.enabled=false;
+	PS.size[0]=PS.size[1]=PS.size[2]=0;
+	}
+	
+
+	}
+	"
+
+     
+}
+
+
+DEF	Aparitie_lift Script 
+{
+ eventIn SFBool	Click_s1
+ eventIn SFBool	Click_s2
+ eventIn SFBool	Click_s3
+ eventIn SFBool	slot_c_s1
+ eventIn SFBool	slot_c_s2
+ eventIn SFBool	slot_c_s3
+ eventIn SFTime	buton_aparitie_lift
+ eventOut SFBool Status
+ field SFNode txt3 USE text3
+ field SFNode txt2 USE text2
+ field SFNode s1 USE Sig1
+ field SFNode s2 USE Sig2
+ field SFNode s3 USE Sig3
+ field SFBool c_s1 FALSE
+ field SFBool c_s2 FALSE
+ field SFBool c_s3 FALSE
+ field SFInt32 c_slot_s1 -1
+ field SFInt32 c_slot_s2 -1
+ field SFInt32 c_slot_s3 -1
+ field SFNode T_lift USE T_ap_lift
+  ROUTE	Slot1_s1.isActive TO Aparitie_lift.slot_c_s1
+  ROUTE	Slot2_s2.isActive TO Aparitie_lift.slot_c_s2
+  ROUTE	Slot3_s3.isActive TO Aparitie_lift.slot_c_s3
+  ROUTE	Sig1_buton.isActive	TO Aparitie_lift.Click_s1
+  ROUTE	Sig2_buton.isActive	TO Aparitie_lift.Click_s2
+  ROUTE	Sig3_buton.isActive	TO Aparitie_lift.Click_s3
+  ROUTE	buton_ap_lift.touchTime	TO Aparitie_lift.buton_aparitie_lift
+  ROUTE	T_ap_lift.fraction_changed TO P_ap_lift.set_fraction
+  ROUTE	P_ap_lift.value_changed	TO Lift.translation
+ directOutput TRUE
+ url "javascript:
+ 
+ function Click_s1(sig)
+ {
+   if(c_slot_s1==-1)
+   {if(sig&&c_s1==false)
+   {
+	 c_s1=true;
+	 c_s2=false;
+	 c_s3=false;
+   }
+   }
+   else
+   {
+	   c_s1=true;
+	   if(c_s2)
+	   {
+		   s1.translation[0]^=s2.translation[0];
+		   s2.translation[0]^=s1.translation[0];
+		   s1.translation[0]^=s2.translation[0];
+		   c_slot_s1^=c_slot_s2;
+		   c_slot_s2^=c_slot_s1;
+		   c_slot_s1^=c_slot_s2;
+		   c_s1=false;
+		   c_s2=false;
+          
+	   }
+	   else
+		   if(c_s3)
+		   {
+		   s1.translation[0]^=s3.translation [0];
+		   s3.translation[0]^=s1.translation[0];
+		   s1.translation[0]^=s3.translation[0];
+		   c_slot_s1^=c_slot_s3;
+		   c_slot_s3^=c_slot_s1;
+		   c_slot_s1^=c_slot_s3;
+		   c_s1=false;
+		   c_s3=false;
+          
+	   }
+   
+	}
+
+	  
+ }
+
+ 
+ function Click_s2(sig)
+ {
+	 if(c_slot_s2==-1)
+	 {if(sig&&c_s2==false)
+  {
+      
+	  c_s2=true;
+      c_s1=false;
+      c_s3=false;
+  }}
+  else
+   {
+	   c_s2=true;
+	   if(c_s1)
+	   {
+		   s1.translation[0]^=s2.translation[0];
+		   s2.translation[0]^=s1.translation[0];
+		   s1.translation[0]^=s2.translation[0];
+		   c_slot_s1^=c_slot_s2;
+		   c_slot_s2^=c_slot_s1;
+		   c_slot_s1^=c_slot_s2;
+		   c_s1=false;
+		   c_s2=false;
+          
+	   }
+	   else
+		   if(c_s3)
+		   {
+		   s2.translation[0]^=s3.translation[0];
+		   s3.translation[0]^=s2.translation[0];
+		   s2.translation[0]^=s3.translation[0];
+		   c_slot_s2^=c_slot_s3;
+		   c_slot_s3^=c_slot_s2
+		   c_slot_s2^=c_slot_s3;
+		   c_s2=false;
+		   c_s3=false;
+          
+	   }
+   }
+ }
+ function Click_s3(sig)
+ {
+   if(c_slot_s3==-1)
+   {if(sig&&c_s3==false)
+    {
+	 c_s3=true;
+	 c_s1=false;
+	 c_s2=false;
+ }}
+ else
+   {
+	   c_s3=true;
+	   if(c_s1)
+	   {
+		   s1.translation[0]^=s3.translation[0];
+		   s3.translation[0]^=s1.translation[0];
+		   s1.translation[0]^=s3.translation[0];
+		   c_slot_s1^=c_slot_s3;
+		   c_slot_s3^=c_slot_s1;
+		   c_slot_s1^=c_slot_s3;
+		   c_s1=false;
+		   c_s3=false;
+          
+	   }
+	   else
+		   if(c_s2)
+		   {
+		   s2.translation[0]^=s3.translation[0];
+		   s3.translation[0]^=s2.translation[0];
+		   s2.translation[0]^=s3.translation[0];
+		   c_slot_s2^=c_slot_s3;
+		   c_slot_s3^=c_slot_s2;
+		   c_slot_s2^=c_slot_s3;
+		   c_s2=false;
+		   c_s3=false;
+          
+	   }
+   }
+   
+  
+ }
+ function slot_c_s1(slot)
+ {
+    if(c_slot_s1!=-1&&c_slot_s2!=-1&&c_slot_s3!=-1)
+  {
+			txt2.scale[0]=0;
+			txt2.scale[1]=0;
+			txt2.scale[2]=0;
+			txt3.scale[0]=1;
+			txt3.scale[1]=1;
+			txt3.scale[2]=1;
+  }
+ if(slot)
+ {
+	 if(c_slot_s1!=-1||c_slot_s2!=-1||c_slot_s3!=-1)
+	 {
+	if(c_s1&&c_slot_s2!=1&&c_slot_s3!=1)
+   {
+   s1.translation[0]=-1;
+   s1.translation[1]=62;
+   s1.translation[2]=11.5;
+   c_slot_s1=1;
+   }
+   else
+	   if(c_s2&&c_slot_s1!=1&&c_slot_s3!=1)
+   {
+   s2.translation[0]=-1;
+   s2.translation[1]=62;
+   s2.translation[2]=11.5;
+   c_slot_s2=1;
+   }
+   else
+	   if(c_s3&&c_slot_s1!=1&&c_slot_s2!=1)
+   {
+   s3.translation[0]=-1;
+   s3.translation[1]=62;
+   s3.translation[2]=11.5;
+   c_slot_s3=1;
+   }
+	}
+	
+ }
+ 
+ 
+ }
+
+ function slot_c_s2(slot)
+ {
+	   if(c_slot_s1!=-1&&c_slot_s2!=-1&&c_slot_s3!=-1)
+  {
+			txt2.scale[0]=0;
+			txt2.scale[1]=0;
+			txt2.scale[2]=0;
+			txt3.scale[0]=1;
+			txt3.scale[1]=1;
+			txt3.scale[2]=1;
+  }
+ if(slot)
+ {
+   if(c_s1&&c_slot_s2!=2&&c_slot_s3!=2)
+   {
+   s1.translation[0]=0;
+   s1.translation[1]=62;
+   s1.translation[2]=11.5;
+   c_slot_s1=2;
+   }
+   else
+	   if(c_s2&&c_slot_s1!=2&&c_slot_s3!=2)
+   {
+   s2.translation[0]=0;
+   s2.translation[1]=62;
+   s2.translation[2]=11.5;
+   c_slot_s2=2;
+   }
+   else
+	   if(c_s3&&c_slot_s1!=2&&c_slot_s2!=2)
+   {
+   s3.translation[0]=0;
+   s3.translation[1]=62;
+   s3.translation[2]=11.5;
+   c_slot_s3=2;
+   }
+ }
+ }
+   function slot_c_s3(slot)
+ {
+	 if(c_slot_s1!=-1&&c_slot_s2!=-1&&c_slot_s3!=-1)
+  {
+			txt2.scale[0]=0;
+			txt2.scale[1]=0;
+			txt2.scale[2]=0;
+			txt3.scale[0]=1;
+			txt3.scale[1]=1;
+			txt3.scale[2]=1;
+  }
+ if(slot)
+ {
+	   
+   if(c_s1&&c_slot_s2!=3&&c_slot_s3!=3)
+   {
+   s1.translation[0]=1;
+   s1.translation[1]=62;
+   s1.translation[2]=11.5;
+   c_slot_s1=3;
+   }
+   else
+	   if(c_s2&&c_slot_s1!=3&&c_slot_s3!=3)
+   {
+   s2.translation[0]=1;
+   s2.translation[1]=62;
+   s2.translation[2]=11.5;
+   c_slot_s2=3;
+   }
+   else
+	   if(c_s3&&c_slot_s1!=3&&c_slot_s2!=3)
+   {
+   s3.translation[0]=1;
+   s3.translation[1]=62;
+   s3.translation[2]=11.5;
+   c_slot_s3=3;
+   }
+ }
+ 
+ 
+ }
+  function buton_aparitie_lift(status)
+  {
+	  if(s1.translation[0]==-1&&s3.translation[0]==0&&s2.translation[0]==1)
+	  {
+		  T_lift.startTime=status;
+		    txt3.scale[0]=0;
+			txt3.scale[1]=0;
+			txt3.scale[2]=0; 
+	  }
+
+  }
+ "
+}
+
+
+DEF	Activare_rampa Script 
+{
+eventIn	SFBool Comutare
+eventIn	SFBool Cos1
+eventIn	SFBool Cos2
+eventIn	SFBool Cos3
+eventOut SFBool Comutare_rezultat
+field SFInt32 Costum -1
+field SFNode Ramp1 USE Rampa1
+field SFNode Ramp2 USE Rampa2
+field SFBool R1 FALSE
+field SFBool R2 TRUE
+field SFNode Ceata USE F
+field SFNode Mini_r USE	Pamant
+field SFBool Ceata_on FALSE
+field SFBool Racheta_on TRUE
+field SFNode St_sec USE	sticla_sec
+directOutput TRUE
+ROUTE buton_panou1.isActive	TO Activare_rampa.Cos1
+ROUTE buton_panou2.isActive	TO Activare_rampa.Cos2
+ROUTE buton_panou3.isActive	TO Activare_rampa.Cos3
+
+
+url	"javascript: function Comutare(active)
+{
+  if(active)
+  {
+	  
+	  if(R1==TRUE)
+	  {
+	  Ramp1.coord.point[5][1]=0;
+	  Ramp1.coord.point[6][1]=0	;
+		}
+		
+	  if(R2==TRUE)
+		{
+	  Ramp2.coord.point[5][1]=0;
+	  Ramp2.coord.point[6][1]=0	;
+		}
+	
+  }
+
+}
+function Cos1(status)
+{
+	if(status)
+		Costum=1;
+	R1=true;
+		St_sec.scale[0]=St_sec[1]=St_sec[2]=0;
+}
+function Cos2(status)
+{
+	
+	 if(status)
+	 { Costum=2;
+	 if(Ceata_on==false)
+	 {
+		Ceata_on=true;
+		Ceata.visibilityRange=10;
+	 }
+	 else
+	 {
+	
+	 Ceata_on=false;
+	 Ceata.visibilityRange=0;
+ }}
+}
+function Cos3(status)
+{
+	  if(status)
+	  {
+		  Costum=3;
+		  if(Racheta_on)
+		  {
+	  Mini_r.scale[0]=Mini_r.scale[1]=Mini_r[2]=0;
+	  Racheta_on=false;
+		  }
+		  else
+		  {
+			  Mini_r.scale[0]=Mini_r[2]=Mini_r.scale[1]=1;
+			  
+			  Racheta_on=true;
+		  }
+
+	  }
+}
+
+
+"
+}
+
+DEF	T_usa TimeSensor 
+{
+loop FALSE
+cycleInterval 20
+}
+
+
+DEF	Translare_usa PositionInterpolator {
+	key	[0 0.5 1]
+	keyValue [0 2.5 10.6,0 0 10.6]
+
+}
+DEF	Micsorare_usa PositionInterpolator
+{
+	key [0 0.5 1]
+	keyValue [1.5 2.1 2 , 1.5 0 2]
+}
+
+
+
+ROUTE Buton_2.touchTime TO T_usa.startTime
+ROUTE T_usa.fraction_changed TO Translare_usa.set_fraction
+ROUTE T_usa.fraction_changed TO Micsorare_usa.set_fraction
+ROUTE Translare_usa.value_changed TO usa.translation
+ROUTE Micsorare_usa.value_changed TO usa.scale
+ROUTE Buton_1.isActive TO Activare_rampa.Comutare
+ROUTE Buton_3.isActive TO Activare_rampa.Comutare
+
