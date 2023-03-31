@@ -12,7 +12,7 @@ din acea locatie arida.
 
 [Controale]: tastele directionale (sus, jos, stanga, dreapta)
 
-[Start joc]: porniti fisierul Game.wrl
+[Start joc]: exrcutati fisierul Game.wrl
 
 [Cerinte]: Cortona 3D
 
